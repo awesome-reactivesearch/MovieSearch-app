@@ -1,3 +1,169 @@
-body {
-  margin-bottom: 20px;
+.main-container {
+  margin: 0 10px;
+}
+
+.sub-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+hr {
+  margin: 5px 0px 0px 0px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* styling for header */
+
+.navbar {
+  background-color: #333;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.logo-container {
+  width: 50%;
+}
+
+.app-logo {
+  margin-left: 0px !important;
+  margin-top: 3px;
+}
+
+.search-container {
+  width: 50%;
+}
+
+.search-bar {
+  border: 2px solid #86ddf8;
+  border-radius: 3px;
+}
+
+/* styling for left-sidebar */
+
+.left-bar {
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 20%;
+  background-color: #212121;
+  border: 2px solid #86ddf8;
+  -webkit-box-shadow: 9px 10px 20px -10px #86ddf8;
+  box-shadow: 9px 10px 20px -10px #86ddf8;
+  border-radius: 5px;
+  color: #fff;
+  margin-left: 0;
+  min-width: 200px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0px 10px 10px 10px;
+  margin-right: 15px;
+  left: 0;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.list-input {
+  border: 2px solid #86ddf8;
+}
+
+.filter-heading {
+  color: #86ddf8;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.revenue-label {
+  font-size: 13px;
+  color: #cdcdcd;
+  margin-left: 2px;
+}
+
+.revenue-filter {
+  font-size: ;
+}
+
+.revenue-radio {
+  color: #86ddf8;
+}
+
+.datePicker {
+  color: #000;
+}
+
+.list-item {
+  font-size: 13px;
+  color: #cdcdcd;
+  margin-left: 2px;
+}
+
+.list-item:hover {
+  background-color: #4d4d4d;
+  color: #fff;
+}
+
+.blue {
+  background-color: #86ddf8;
+  height: 1px;
+}
+
+/* styling for scrollbar */
+
+::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+}
+
+::-webkit-scrollbar:hover {
+  height: 18px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #151716;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 50px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, #4d4d4d),
+    color-stop(100%, #333)
+  );
+  border: 1px solid #0d0d0d;
+  border-top: 1px solid #666;
+  border-left: 1px solid #666;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 50px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, #4d4d4d),
+    color-stop(100%, #333)
+  );
+  border: 1px solid #1f1f1f;
+  border-top: 1px solid #666;
+  border-left: 1px solid #666;
 }
