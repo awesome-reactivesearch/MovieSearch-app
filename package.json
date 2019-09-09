@@ -2,8 +2,11 @@
   "name": "moviesearch",
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
   "dependencies": {
-    "@appbaseio/reactivesearch": "^2.6.5",
+    "@appbaseio/reactivesearch": "^3.0.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4"
