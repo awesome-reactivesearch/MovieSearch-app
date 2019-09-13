@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import {
   ReactiveBase,
   DataSearch,
@@ -8,7 +8,7 @@ import {
   MultiList,
   SingleRange,
   SelectedFilters,
-  ResultCard
+  ReactiveList
 } from "@appbaseio/reactivesearch";
 import "./App.css";
 
@@ -129,11 +129,11 @@ class App extends Component {
                 dataField="ran_revenue"
                 className="revenue-filter"
                 data={[
-                  {start: 0, end: 1000, label: "< 1M"},
-                  {start: 1000, end: 10000, label: "1M-10M"},
-                  {start: 10000, end: 500000, label: "10M-500M"},
-                  {start: 500000, end: 1000000, label: "500M-1B"},
-                  {start: 1000000, end: 10000000, label: "> 1B"}
+                  { start: 0, end: 1000, label: "< 1M" },
+                  { start: 1000, end: 10000, label: "1M-10M" },
+                  { start: 10000, end: 500000, label: "10M-500M" },
+                  { start: 500000, end: 1000000, label: "500M-1B" },
+                  { start: 1000000, end: 10000000, label: "> 1B" }
                 ]}
                 showRadio={true}
                 showFilter={true}
@@ -293,8 +293,7 @@ class App extends Component {
                 showClearAll={true}
                 clearAllLabel="Clear filters"
               />
-
-              <ResultCard
+              <ReactiveList
                 componentId="results"
                 dataField="original_title"
                 react={{
@@ -345,32 +344,36 @@ class App extends Component {
                   resultsInfo: "result-list-info",
                   poweredBy: "powered-by"
                 }}
-                onData={function(res) {
-                  return {
-                    description: (
-                      <div className="main-description">
+              >
+                {({ data }) => (
+                  <ReactiveList.ResultCardsWrapper>
+                    {data.map(item => (
+                      <div
+                        style={{ marginRight: "15px" }}
+                        className="main-description"
+                      >
                         <div className="ih-item square effect6 top_to_bottom">
                           <a
                             target="#"
-                            href={"http://www.imdb.com/title/" + res.imdb_id}
+                            href={"http://www.imdb.com/title/" + item.imdb_id}
                           >
                             <div className="img">
                               <img
                                 src={
                                   "https://image.tmdb.org/t/p/w500" +
-                                  res.poster_path
+                                  item.poster_path
                                 }
-                                alt={res.original_title}
+                                alt={item.original_title}
                                 className="result-image"
                               />
                             </div>
                             <div className="info colored">
                               <h3 className="overlay-title">
-                                {res.original_title}
+                                {item.original_title}
                               </h3>
 
                               <div className="overlay-description">
-                                {res.tagline}
+                                {item.tagline}
                               </div>
 
                               <div className="overlay-info">
@@ -380,7 +383,7 @@ class App extends Component {
                                       Imdb
                                       <span className="details">
                                         {" "}
-                                        {res.vote_average}/10{" "}
+                                        {item.vote_average}/10{" "}
                                       </span>
                                     </b>
                                   </div>
@@ -390,7 +393,7 @@ class App extends Component {
                                         <i className="fa fa-clock-o" />{" "}
                                       </span>{" "}
                                       <span className="details">
-                                        {res.time_str}
+                                        {item.time_str}
                                       </span>
                                     </b>
                                   </div>
@@ -399,7 +402,7 @@ class App extends Component {
                                       Score:
                                       <span className="details">
                                         {" "}
-                                        {res.score}
+                                        {item.score}
                                       </span>
                                     </b>
                                   </div>
@@ -410,7 +413,7 @@ class App extends Component {
                                       <span>Revenue:</span>{" "}
                                       <span className="details">
                                         {" "}
-                                        ${res.or_revenue}
+                                        ${item.or_revenue}
                                       </span>{" "}
                                     </b>
                                   </div>
@@ -420,7 +423,7 @@ class App extends Component {
                                       Language:
                                       <span className="details">
                                         {" "}
-                                        {res.original_language}
+                                        {item.original_language}
                                       </span>
                                     </b>
                                   </div>
@@ -430,11 +433,10 @@ class App extends Component {
                           </a>
                         </div>
                       </div>
-                    ),
-                    url: "http://www.imdb.com/title/" + res.imdb_id
-                  };
-                }}
-              />
+                    ))}
+                  </ReactiveList.ResultCardsWrapper>
+                )}
+              </ReactiveList>
             </div>
 
             <button
