@@ -32,8 +32,9 @@ class App extends Component {
     return (
       <div className="main-container">
         <ReactiveBase
-          app="MovieAppFinal"
-          credentials="RxIAbH9Jc:6d3a5016-5e9d-448f-bd2b-63c80b401484"
+          app="movie_app_final"
+          url="https://xe6N9nDRV:51ea7a8a-6354-4b5f-83e1-12dce3b7ec47@arc-cluster-appbase-demo-ps1pgt.searchbase.io"
+          enableAppbase
           theme={{
             typography: {
               fontFamily:
@@ -294,6 +295,7 @@ class App extends Component {
                 clearAllLabel="Clear filters"
               />
               <ReactiveList
+                defaultQuery={() => ({ track_total_hits: true })}
                 componentId="results"
                 dataField="original_title"
                 react={{
