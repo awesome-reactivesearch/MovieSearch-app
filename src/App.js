@@ -28,7 +28,6 @@ class App extends Component {
       message: this.state.isClicked ? "🔬 Show Filters" : "🎬 Show Movies",
     });
   }
-
   render() {
     return (
       <div className="main-container">

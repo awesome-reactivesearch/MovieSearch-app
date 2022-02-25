@@ -242,6 +242,120 @@ hr {
   margin-top: 5px;
 }
 
+/* styling for overlay effect */
+
+.overlay-title {
+  color: #86ddf8 !important;
+  margin-top: 7px;
+}
+
+.overlay-description {
+  position: absolute;
+  color: #fff !important;
+  font-size: 15px !important;
+  margin-bottom: 50px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  margin-bottom: 155px;
+  padding: 8px;
+  font-style: italic;
+}
+
+.overlay-info {
+  position: absolute;
+  background-color: #111111;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  margin-bottom: 7px;
+}
+
+.ih-item {
+  position: relative;
+  -webkit-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+.ih-item a:hover {
+  text-decoration: none;
+}
+
+.ih-item.square .info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.ih-item.square.effect6 {
+  overflow: hidden;
+}
+
+.ih-item.square.effect6.colored .info {
+  background: #1a4a72;
+  background: rgba(26, 74, 114, 0.6);
+}
+
+.ih-item.square.effect6.colored .info h3 {
+  background: rgba(12, 34, 52, 0.6);
+}
+
+.ih-item.square.effect6 .img,
+.ih-item.square.effect6 .info {
+  -webkit-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+.ih-item.square.effect6 .info {
+  background: #333;
+  background: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.ih-item.square.effect6 .info h3 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  background: #111;
+  -webkit-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+.ih-item.square.effect6 a:hover .img {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.ih-item.square.effect6 a:hover .info {
+  visibility: visible;
+  opacity: 1;
+}
+
+.ih-item.square.effect6.top_to_bottom .info h3 {
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.ih-item.square.effect6.top_to_bottom a:hover .info h3 {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
 /* styling for scrollbar */
 
 ::-webkit-scrollbar {
@@ -347,9 +461,5 @@ hr {
     margin-top: 3px;
     width: 207px;
     height: 30px;
-  }
-
-  li {
-    color: black;
   }
 }
