@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {
   ReactiveBase,
-  DataSearch,
+  SearchBox,
   MultiDataList,
   RangeSlider,
   DateRange,
@@ -45,7 +45,7 @@ class App extends Component {
               />
             </div>
             <div className="search-container">
-              <DataSearch
+              <SearchBox
                 componentId="mainSearch"
                 dataField={["original_title"]}
                 categoryField="title"
@@ -53,8 +53,22 @@ class App extends Component {
                 queryFormat="and"
                 placeholder="Search for movies..."
                 iconPosition="left"
-                autosuggest={false}
+                autosuggest={true}
                 filterLabel="search"
+                enableRecentSuggestions={true}
+                enablePopularSuggestions={true}
+                enablePredictiveSuggestions={true}
+                popularSuggestionsConfig={{
+                  size: 3,
+                  minHits: 2,
+                  minChars: 4,
+                }}
+                recentSuggestionsConfig={{
+                  size: 3,
+                  minChars: 4,
+                }}
+                index="movie_app_final"
+                size={10}
               />
             </div>
           </div>{" "}
