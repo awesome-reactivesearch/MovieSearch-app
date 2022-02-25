@@ -6,7 +6,7 @@ import {
   RangeSlider,
   DateRange,
   MultiList,
-  SingleRange
+  SingleRange,
 } from "@appbaseio/reactivesearch";
 import "./App.css";
 
@@ -15,13 +15,13 @@ class App extends Component {
     return (
       <ReactiveBase
         app="movie_app_final"
-        url="https://xe6N9nDRV:51ea7a8a-6354-4b5f-83e1-12dce3b7ec47@arc-cluster-appbase-demo-ps1pgt.searchbase.io"
+        url="https://b7GLrKxsd:095e2eab-3800-491b-abf6-6b15cf8edf87@appbase-demo-ansible-abxiydt-arc.searchbase.io"
         enableAppbase
         theme={{
           typography: {
             fontFamily:
               '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Droid Sans", "Helvetica Neue", sans-serif',
-            fontSize: "16px"
+            fontSize: "16px",
           },
           colors: {
             textColor: "#fff",
@@ -30,8 +30,8 @@ class App extends Component {
             primaryColor: "#2196F3",
             titleColor: "#fff",
             alertColor: "#d9534f",
-            borderColor: "#666"
-          }
+            borderColor: "#666",
+          },
         }}
       >
         <DataSearch
@@ -64,15 +64,15 @@ class App extends Component {
               "date-filter",
               "RangeSlider",
               "language-list",
-              "revenue-list"
-            ]
+              "revenue-list",
+            ],
           }}
           showFilter={true}
           filterLabel="Genre"
           URLParams={false}
           innerClass={{
             label: "list-item",
-            input: "list-input"
+            input: "list-input",
           }}
         />
         <SingleRange
@@ -84,7 +84,7 @@ class App extends Component {
             { start: 1000, end: 10000, label: "1M-10M" },
             { start: 10000, end: 500000, label: "10M-500M" },
             { start: 500000, end: 1000000, label: "500M-1B" },
-            { start: 1000000, end: 10000000, label: "> 1B" }
+            { start: 1000000, end: 10000000, label: "> 1B" },
           ]}
           showRadio={true}
           showFilter={true}
@@ -92,7 +92,7 @@ class App extends Component {
           URLParams={false}
           innerClass={{
             label: "revenue-label",
-            radio: "revenue-radio"
+            radio: "revenue-radio",
           }}
         />
         <hr />
@@ -102,11 +102,11 @@ class App extends Component {
           className="review-filter"
           range={{
             start: 0,
-            end: 10
+            end: 10,
           }}
           rangeLabels={{
             start: "0",
-            end: "10"
+            end: "10",
           }}
           react={{
             and: [
@@ -115,8 +115,8 @@ class App extends Component {
               "language-list",
               "date-Filter",
               "genres-list",
-              "revenue-list"
-            ]
+              "revenue-list",
+            ],
           }}
         />
         <hr />
@@ -138,73 +138,73 @@ class App extends Component {
               "date-filter",
               "RangeSlider",
               "genres-list",
-              "revenue-list"
-            ]
+              "revenue-list",
+            ],
           }}
           data={[
             {
               label: "English",
-              value: "English"
+              value: "English",
             },
             {
               label: "Chinese",
-              value: "Chinese"
+              value: "Chinese",
             },
             {
               label: "Turkish",
-              value: "Turkish"
+              value: "Turkish",
             },
             {
               label: "Swedish",
-              value: "Swedish"
+              value: "Swedish",
             },
             {
               label: "Russian",
-              value: "Russian"
+              value: "Russian",
             },
             {
               label: "Portuguese",
-              value: "Portuguese"
+              value: "Portuguese",
             },
             {
               label: "Korean",
-              value: "Korean"
+              value: "Korean",
             },
             {
               label: "Japanese",
-              value: "Japanese"
+              value: "Japanese",
             },
             {
               label: "Italian",
-              value: "Italian"
+              value: "Italian",
             },
             {
               label: "Hindi",
-              value: "Hindi"
+              value: "Hindi",
             },
             {
               label: "French",
-              value: "French"
+              value: "French",
             },
             {
               label: "Finnish",
-              value: "Finnish"
+              value: "Finnish",
             },
             {
               label: "Spanish",
-              value: "Spanish"
+              value: "Spanish",
             },
             {
               label: "Deutsch",
-              value: "Deutsch"
-            }
+              value: "Deutsch",
+            },
           ]}
           showFilter={true}
           filterLabel="Language"
           URLParams={false}
           innerClass={{
             label: "list-item",
-            input: "list-input"
+            input: "list-input",
           }}
         />
         <hr />
