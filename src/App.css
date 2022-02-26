@@ -1,6 +1,5 @@
 .main-container {
   margin: 0 10px;
-  padding-top: 10px;
 }
 
 .sub-container {
@@ -60,7 +59,8 @@ hr {
 
 /* styling for left-sidebar */
 
-.left-bar {
+.left-bar,
+.left-bar-optional {
   -ms-flex-direction: column;
   flex-direction: column;
   width: 20%;
@@ -92,17 +92,17 @@ hr {
   margin-bottom: 10px;
 }
 
-.revenue-label {
+.vote-average-label {
   font-size: 13px;
   color: #cdcdcd;
   margin-left: 2px;
 }
 
-.revenue-filter {
+.vote-average-filter {
   font-size: ;
 }
 
-.revenue-radio {
+.vote-average-radio {
   color: #86ddf8;
 }
 
