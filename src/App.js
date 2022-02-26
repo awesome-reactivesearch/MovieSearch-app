@@ -6,7 +6,6 @@ import {
   RangeSlider,
   DateRange,
   MultiList,
-  SingleRange,
   SelectedFilters,
   ReactiveList,
 } from "@appbaseio/reactivesearch";
@@ -32,8 +31,8 @@ class App extends Component {
     return (
       <div className="main-container">
         <ReactiveBase
-          app="movie_app_final"
-          url="https://b7GLrKxsd:095e2eab-3800-491b-abf6-6b15cf8edf87@appbase-demo-ansible-abxiydt-arc.searchbase.io"
+          app="movies-demo-app"
+          url="https://81719ecd9552:e06db001-a6d8-4cc2-bc43-9c15b1c0c987@appbase-demo-ansible-abxiydt-arc.searchbase.io"
           enableAppbase
           theme={{
             typography: {
@@ -84,7 +83,7 @@ class App extends Component {
                   size: 3,
                   minChars: 4,
                 }}
-                index="movie_app_final"
+                index="movies-demo-app"
                 size={10}
               />
             </div>
@@ -103,7 +102,7 @@ class App extends Component {
               </div>
               <MultiList
                 componentId="genres-list"
-                dataField="genres_data.raw"
+                dataField="genres.keyword"
                 className="genres-filter"
                 size={20}
                 sortBy="asc"
@@ -120,7 +119,7 @@ class App extends Component {
                     "date-filter",
                     "RangeSlider",
                     "language-list",
-                    "revenue-list",
+                    "vote-average-list",
                   ],
                 }}
                 showFilter={true}
@@ -129,34 +128,6 @@ class App extends Component {
                 innerClass={{
                   label: "list-item",
                   input: "list-input",
-                }}
-              />
-              <hr className="blue" />
-              <div className="filter-heading center">
-                <b>
-                  {" "}
-                  <i className="fa fa-dollar" /> Revenue{" "}
-                </b>
-              </div>
-
-              <SingleRange
-                componentId="revenue-list"
-                dataField="ran_revenue"
-                className="revenue-filter"
-                data={[
-                  { start: 0, end: 1000, label: "< 1M" },
-                  { start: 1000, end: 10000, label: "1M-10M" },
-                  { start: 10000, end: 500000, label: "10M-500M" },
-                  { start: 500000, end: 1000000, label: "500M-1B" },
-                  { start: 1000000, end: 10000000, label: "> 1B" },
-                ]}
-                showRadio={true}
-                showFilter={true}
-                filterLabel="Revenue"
-                URLParams={false}
-                innerClass={{
-                  label: "revenue-label",
-                  radio: "revenue-radio",
                 }}
               />
               <hr className="blue" />
@@ -170,6 +141,7 @@ class App extends Component {
                 componentId="RangeSlider"
                 dataField="vote_average"
                 className="review-filter"
+                tooltipTrigger="hover"
                 range={{
                   start: 0,
                   end: 10,
@@ -185,9 +157,10 @@ class App extends Component {
                     "language-list",
                     "date-Filter",
                     "genres-list",
-                    "revenue-list",
+                    "vote-average-list",
                   ],
                 }}
+                showHistogram
               />
               <hr className="blue" />
               <div className="filter-heading center">
@@ -198,7 +171,7 @@ class App extends Component {
               </div>
               <MultiDataList
                 componentId="language-list"
-                dataField="original_language.raw"
+                dataField="original_language.keyword"
                 className="language-filter"
                 size={100}
                 sortBy="asc"
@@ -214,65 +187,65 @@ class App extends Component {
                     "date-filter",
                     "RangeSlider",
                     "genres-list",
-                    "revenue-list",
+                    "vote-average-list",
                   ],
                 }}
                 data={[
                   {
                     label: "English",
-                    value: "English",
+                    value: "en",
                   },
                   {
                     label: "Chinese",
-                    value: "Chinese",
+                    value: "zh",
                   },
                   {
                     label: "Turkish",
-                    value: "Turkish",
+                    value: "tr",
                   },
                   {
                     label: "Swedish",
-                    value: "Swedish",
+                    value: "sv",
                   },
                   {
                     label: "Russian",
-                    value: "Russian",
+                    value: "ru",
                   },
                   {
                     label: "Portuguese",
-                    value: "Portuguese",
+                    value: "pt",
                   },
                   {
                     label: "Korean",
-                    value: "Korean",
+                    value: "ko",
                   },
                   {
                     label: "Japanese",
-                    value: "Japanese",
+                    value: "ja",
                   },
                   {
                     label: "Italian",
-                    value: "Italian",
+                    value: "it",
                   },
                   {
                     label: "Hindi",
-                    value: "Hindi",
+                    value: "hi",
                   },
                   {
                     label: "French",
-                    value: "French",
+                    value: "fr",
                   },
                   {
                     label: "Finnish",
-                    value: "Finnish",
+                    value: "fi",
                   },
                   {
                     label: "Spanish",
-                    value: "Spanish",
+                    value: "es",
                   },
                   {
                     label: "Deutsch",
-                    value: "Deutsch",
+                    value: "de",
                   },
                 ]}
                 showFilter={true}
@@ -322,7 +295,7 @@ class App extends Component {
                     "language-list",
                     "date-filter",
                     "genres-list",
-                    "revenue-list",
+                    "vote-average-list",
                   ],
                 }}
                 pagination={true}
@@ -334,9 +307,9 @@ class App extends Component {
                 noResults="No results were found..."
                 sortOptions={[
                   {
-                    dataField: "revenue",
+                    dataField: "vote_count",
                     sortBy: "desc",
-                    label: "Sort by Revenue(High to Low) \u00A0",
+                    label: "Sort by vote-count(High to Low) \u00A0",
                   },
                   {
                     dataField: "popularity",
@@ -365,7 +338,9 @@ class App extends Component {
                 }}
               >
                 {({ data }) => (
-                  <ReactiveList.ResultCardsWrapper>
+                  <ReactiveList.ResultCardsWrapper
+                    style={{ margin: "8px 0 0" }}
+                  >
                     {data.map((item) => (
                       <div
                         style={{ marginRight: "15px" }}
@@ -374,14 +349,14 @@ class App extends Component {
                         <div className="ih-item square effect6 top_to_bottom">
                           <a
                             target="#"
-                            href={"http://www.imdb.com/title/" + item.imdb_id}
+                            href={
+                              "https://www.google.com/search?q=" +
+                              item.original_title
+                            }
                           >
                             <div className="img">
                               <img
-                                src={
-                                  "https://image.tmdb.org/t/p/w500" +
-                                  item.poster_path
-                                }
+                                src={item.poster_path}
                                 alt={item.original_title}
                                 className="result-image"
                               />
@@ -392,17 +367,17 @@ class App extends Component {
                               </h3>
 
                               <div className="overlay-description">
-                                {item.tagline}
+                                {item.overview}
                               </div>
 
                               <div className="overlay-info">
                                 <div className="rating-time-score-container">
                                   <div className="sub-title Rating-data">
                                     <b>
-                                      Imdb
+                                      Ratings
                                       <span className="details">
                                         {" "}
-                                        {item.vote_average}/10{" "}
+                                        {item.vote_average}
                                       </span>
                                     </b>
                                   </div>
@@ -412,31 +387,21 @@ class App extends Component {
                                         <i className="fa fa-clock-o" />{" "}
                                       </span>{" "}
                                       <span className="details">
-                                        {item.time_str}
+                                        {item.release_date}
                                       </span>
                                     </b>
                                   </div>
                                   <div className="sub-title Score-data">
                                     <b>
-                                      Score:
+                                      Popularity:
                                       <span className="details">
                                         {" "}
-                                        {item.score}
+                                        {item.popularity}
                                       </span>
                                     </b>
                                   </div>
                                 </div>
-                                <div className="revenue-lang-container">
-                                  <div className="revenue-data">
-                                    <b>
-                                      <span>Revenue:</span>{" "}
-                                      <span className="details">
-                                        {" "}
-                                        ${item.or_revenue}
-                                      </span>{" "}
-                                    </b>
-                                  </div>
-
+                                <div className="vote-average-lang-container">
                                   <div className="sub-title language-data">
                                     <b>
                                       Language:
