@@ -92,17 +92,17 @@ hr {
   margin-bottom: 10px;
 }
 
-.revenue-label {
+.vote-average-label {
   font-size: 13px;
   color: #cdcdcd;
   margin-left: 2px;
 }
 
-.revenue-filter {
+.vote-average-filter {
   font-size: ;
 }
 
-.revenue-radio {
+.vote-average-radio {
   color: #86ddf8;
 }
 
@@ -174,7 +174,7 @@ hr {
   align-items: center;
 }
 
-.revenue-lang-container {
+.vote-average-lang-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -182,7 +182,7 @@ hr {
   align-items: center;
 }
 
-.revenue-data {
+.vote-average-data {
   font-size: 13px;
   color: #86ddf8;
   text-align: center;
@@ -192,7 +192,7 @@ hr {
   width: 80%;
 }
 
-.revenue-time-container {
+.vote-average-time-container {
   display: flex;
   flex-direction: row;
 }
@@ -347,9 +347,5 @@ hr {
     margin-top: 3px;
     width: 207px;
     height: 30px;
-  }
-
-  li {
-    color: black;
   }
 }
