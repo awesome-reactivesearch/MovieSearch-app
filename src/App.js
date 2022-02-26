@@ -14,8 +14,8 @@ class App extends Component {
   render() {
     return (
       <ReactiveBase
-        app="movie_app_final"
-        url="https://b7GLrKxsd:095e2eab-3800-491b-abf6-6b15cf8edf87@appbase-demo-ansible-abxiydt-arc.searchbase.io"
+        app="movies-demo-app"
+        url="https://81719ecd9552:e06db001-a6d8-4cc2-bc43-9c15b1c0c987@appbase-demo-ansible-abxiydt-arc.searchbase.io"
         enableAppbase
         theme={{
           typography: {
@@ -56,12 +56,12 @@ class App extends Component {
             size: 3,
             minChars: 4,
           }}
-          index="movie_app_final"
+          index="movies-demo-app"
           size={10}
         />
         <MultiList
           componentId="genres-list"
-          dataField="genres_data.raw"
+          dataField="genres.keyword"
           className="genres-filter"
           size={20}
           sortBy="asc"
@@ -78,7 +78,6 @@ class App extends Component {
               "date-filter",
               "RangeSlider",
               "language-list",
-              "revenue-list",
             ],
           }}
           showFilter={true}
@@ -89,31 +88,13 @@ class App extends Component {
             input: "list-input",
           }}
         />
-        <SingleRange
-          componentId="revenue-list"
-          dataField="ran_revenue"
-          className="revenue-filter"
-          data={[
-            { start: 0, end: 1000, label: "< 1M" },
-            { start: 1000, end: 10000, label: "1M-10M" },
-            { start: 10000, end: 500000, label: "10M-500M" },
-            { start: 500000, end: 1000000, label: "500M-1B" },
-            { start: 1000000, end: 10000000, label: "> 1B" },
-          ]}
-          showRadio={true}
-          showFilter={true}
-          filterLabel="Revenue"
-          URLParams={false}
-          innerClass={{
-            label: "revenue-label",
-            radio: "revenue-radio",
-          }}
-        />
+
         <hr />
         <RangeSlider
           componentId="RangeSlider"
           dataField="vote_average"
           className="review-filter"
+          tooltipTrigger="hover"
           range={{
             start: 0,
             end: 10,
@@ -129,14 +110,14 @@ class App extends Component {
               "language-list",
               "date-Filter",
               "genres-list",
-              "revenue-list",
             ],
           }}
+          showHistogram
         />
         <hr />
         <MultiDataList
           componentId="language-list"
-          dataField="original_language.raw"
+          dataField="original_language.keyword"
           className="language-filter"
           size={100}
           sortBy="asc"
@@ -152,65 +133,64 @@ class App extends Component {
               "date-filter",
               "RangeSlider",
               "genres-list",
-              "revenue-list",
             ],
           }}
           data={[
             {
               label: "English",
-              value: "English",
+              value: "en",
             },
             {
               label: "Chinese",
-              value: "Chinese",
+              value: "zh",
             },
             {
               label: "Turkish",
-              value: "Turkish",
+              value: "tr",
             },
             {
               label: "Swedish",
-              value: "Swedish",
+              value: "sv",
             },
             {
               label: "Russian",
-              value: "Russian",
+              value: "ru",
             },
             {
               label: "Portuguese",
-              value: "Portuguese",
+              value: "pt",
             },
             {
               label: "Korean",
-              value: "Korean",
+              value: "ko",
             },
             {
               label: "Japanese",
-              value: "Japanese",
+              value: "ja",
             },
             {
               label: "Italian",
-              value: "Italian",
+              value: "it",
             },
             {
               label: "Hindi",
-              value: "Hindi",
+              value: "hi",
             },
             {
               label: "French",
-              value: "French",
+              value: "fr",
             },
             {
               label: "Finnish",
-              value: "Finnish",
+              value: "fi",
             },
             {
               label: "Spanish",
-              value: "Spanish",
+              value: "es",
             },
             {
               label: "Deutsch",
-              value: "Deutsch",
+              value: "de",
             },
           ]}
           showFilter={true}
