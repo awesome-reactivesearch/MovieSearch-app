@@ -36,8 +36,8 @@ class App extends Component {
       >
         <SearchBox
           componentId="mainSearch"
-          dataField={["original_title"]}
-          categoryField="title"
+          dataField={["original_title", "original_title.search"]}
+          categoryField="genres.keyword"
           className="search-bar"
           queryFormat="and"
           placeholder="Search for movies..."
@@ -58,6 +58,7 @@ class App extends Component {
           }}
           index="movies-demo-app"
           size={10}
+          innerClass={{ list: "list-class" }}
         />
         <MultiList
           componentId="genres-list"
