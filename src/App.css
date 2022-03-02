@@ -92,17 +92,17 @@ hr {
   margin-bottom: 10px;
 }
 
-.revenue-label {
+.vote-average-label {
   font-size: 13px;
   color: #cdcdcd;
   margin-left: 2px;
 }
 
-.revenue-filter {
+.vote-average-filter {
   font-size: ;
 }
 
-.revenue-radio {
+.vote-average-radio {
   color: #86ddf8;
 }
 
@@ -174,7 +174,7 @@ hr {
   align-items: center;
 }
 
-.revenue-lang-container {
+.vote-average-lang-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -182,7 +182,7 @@ hr {
   align-items: center;
 }
 
-.revenue-data {
+.vote-average-data {
   font-size: 13px;
   color: #86ddf8;
   text-align: center;
@@ -192,7 +192,7 @@ hr {
   width: 80%;
 }
 
-.revenue-time-container {
+.vote-average-time-container {
   display: flex;
   flex-direction: row;
 }
@@ -258,8 +258,13 @@ hr {
   left: 0;
   right: 0;
   margin-bottom: 155px;
-  padding: 8px;
+  padding: 0 8px;
   font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .overlay-info {
@@ -442,6 +447,10 @@ hr {
     width: 100%;
   }
 
+  .list-class {
+    color: black !important;
+  }
+
   .logo-container {
     width: 100%;
     margin-bottom: 10px;
@@ -462,4 +471,8 @@ hr {
     width: 207px;
     height: 30px;
   }
+}
+
+.selected-filters > * {
+  color: #cdcdcd !important;
 }
