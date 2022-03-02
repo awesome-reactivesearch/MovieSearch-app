@@ -472,3 +472,7 @@ hr {
     height: 30px;
   }
 }
+
+.selected-filters > * {
+  color: #cdcdcd !important;
+}

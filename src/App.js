@@ -280,6 +280,7 @@ class App extends Component {
               <SelectedFilters
                 showClearAll={true}
                 clearAllLabel="Clear filters"
+                className="selected-filters"
               />
               <ReactiveList
                 defaultQuery={() => ({ track_total_hits: true })}
