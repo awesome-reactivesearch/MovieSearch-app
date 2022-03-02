@@ -25,7 +25,6 @@ class App extends Component {
               fontSize: "16px",
             },
             colors: {
-              textColor: "#fff",
               backgroundColor: "#212121",
               primaryTextColor: "#fff",
               primaryColor: "#2196F3",
@@ -47,8 +46,8 @@ class App extends Component {
             <div className="search-container">
               <SearchBox
                 componentId="mainSearch"
-                dataField={["original_title"]}
-                categoryField="title"
+                dataField={["original_title", "original_title.search"]}
+                categoryField="genres.keyword"
                 className="search-bar"
                 queryFormat="and"
                 placeholder="Search for movies..."
@@ -69,6 +68,7 @@ class App extends Component {
                 }}
                 index="movies-demo-app"
                 size={10}
+                innerClass={{ list: "list-class" }}
               />
             </div>
           </div>{" "}
