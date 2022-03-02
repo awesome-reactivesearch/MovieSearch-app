@@ -63,8 +63,8 @@ class App extends Component {
             <div className="search-container">
               <SearchBox
                 componentId="mainSearch"
-                dataField={["original_title"]}
-                categoryField="title"
+                dataField={["original_title", "original_title.search"]}
+                categoryField="title.keyword"
                 className="search-bar"
                 queryFormat="and"
                 placeholder="Search for movies..."
@@ -85,6 +85,7 @@ class App extends Component {
                 }}
                 index="movies-demo-app"
                 size={10}
+                innerClass={{ list: "list-class" }}
               />
             </div>
           </div>

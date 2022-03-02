@@ -447,6 +447,10 @@ hr {
     width: 100%;
   }
 
+  .list-class {
+    color: black !important;
+  }
+
   .logo-container {
     width: 100%;
     margin-bottom: 10px;
