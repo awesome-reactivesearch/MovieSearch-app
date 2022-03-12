@@ -328,7 +328,7 @@ class App extends Component {
                     label: "Sort by Ratings(High to Low) \u00A0",
                   },
                   {
-                    dataField: "original_title.raw",
+                    dataField: "original_title.keyword",
                     sortBy: "asc",
                     label: "Sort by Title(A-Z) \u00A0",
                   },
