@@ -37,6 +37,7 @@ hr {
   justify-content: flex-start;
   padding-left: 0px;
   padding-right: 0px;
+  margin: 10px auto 19px;
 }
 
 .logo-container {
@@ -55,6 +56,9 @@ hr {
 .search-bar {
   border: 2px solid #86ddf8;
   border-radius: 3px;
+}
+.search-bar input {
+  border: none;
 }
 
 /* styling for left-sidebar */
@@ -79,6 +83,7 @@ hr {
   left: 0;
   margin-top: 4px;
   margin-bottom: 10px;
+  height: max-content;
 }
 
 .list-input {
@@ -403,7 +408,33 @@ hr {
   border-top: 1px solid #666;
   border-left: 1px solid #666;
 }
-
+.input-addon {
+  border-radius: 0 !important;
+  border: none !important;
+  background: white;
+}
+.focus-shortcut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-225deg, #d5dbe4, #f8f8f8);
+  border-radius: 0;
+  box-shadow: inset 0px -2px 0px 1px #cdcde6, inset 0 0 1px 1px #fff,
+    0 1px 2px 1px rgb(30 35 90 / 40%);
+  color: #969faf;
+  height: 24px;
+  margin-right: 0.4em;
+  padding-bottom: 2px;
+  position: relative;
+  top: -1px;
+  min-width: 24px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 20px;
+  cursor: default;
+  border: none;
+  padding-bottom: 4px;
+}
 /* Responsive styling */
 @media (max-width: 768px) {
   .toggle-button {
@@ -470,6 +501,9 @@ hr {
     margin-top: 3px;
     width: 207px;
     height: 30px;
+  }
+  .input-addon {
+    display: none !important;
   }
 }
 

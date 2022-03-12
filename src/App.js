@@ -85,6 +85,11 @@ class App extends Component {
                 index="movies-demo-app"
                 size={10}
                 innerClass={{ list: "list-class" }}
+                addonAfter={
+              <span tabIndex="1" className="focus-shortcut">
+                /
+              </span>
+            }
               />
             </div>
           </div>
