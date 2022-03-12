@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@appbaseio/reactivesearch": "^3.28.0",
+    "@appbaseio/reactivesearch": "^3.29.0-gamma.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0"
